@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-API_URL = "http://127.0.0.1:8000/predict"  # Update to deployed URL later
+API_URL = "https://composite-material-api.onrender.com/predict"  # Update to deployed URL later
 
 st.title("🔍 Composite Material Classifier (via API)")
 
@@ -39,7 +39,7 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     if st.button("Run Batch Prediction"):
         files = {"file": uploaded_file.getvalue()}
-        res = requests.post("http://127.0.0.1:8000/predict-batch", files=files)
+        res = requests.post("https://composite-material-api.onrender.com/predict-batch", files=files)
         if res.status_code == 200:
             result_df = pd.DataFrame(res.json())
             st.success("✅ Predictions completed.")
