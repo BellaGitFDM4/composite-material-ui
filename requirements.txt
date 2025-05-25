@@ -3,7 +3,6 @@
 Created on Sun May 25 08:06:56 2025
 
 @author: beatt
-"""
 
 streamlit
 pandas
